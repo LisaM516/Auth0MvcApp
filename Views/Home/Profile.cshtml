@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h2>Welcome, @ViewBag.Username!</h2>
+
+<p>Your profile information is below:</p>
+<ul>
+    <li><strong>Name:</strong> @User.Claims.FirstOrDefault(c => c.Type == "name")?.Value</li>
+    <li><strong>Email:</strong> @User.Claims.FirstOrDefault(c => c.Type == "email")?.Value</li>
+</ul>

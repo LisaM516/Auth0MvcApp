@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Auth0 MVC App!</h1>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>Hi, @ViewBag.UserName! You are logged in.</p>
+        <a href="/Home/Logout">Logout</a>
+    }
+    else
+    {
+        <p>Welcome, Guest! Please log in to access more features.</p>
+        <a href="/Home/Login">Login with Auth0</a>
+    }
+</div>
+
